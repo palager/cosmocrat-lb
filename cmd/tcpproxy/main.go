@@ -19,7 +19,7 @@ func main() {
 	p.AddHTTPHostRoute(":80", "ssb.cosmocr.at", tcpproxy.To("ssb-pub.scuttlebutt.svc.cluster.local:80"))
 	p.AddSNIRoute(":443", "ssb.cosmocr.at", tcpproxy.To("ssb-pub.scuttlebutt.svc.cluster.local:443"))
 
-	p.AddHTTPHostRoute(":80", "cosmocr.at", tcpproxy.To("cosmocrat-backend.default.svc.cluster.local:80"))
-	p.AddSNIRoute(":443", "cosmocr.at", tcpproxy.To("cosmocrat-backend.default.svc.cluster.local:443"))
+	p.AddHTTPHostRoute(":80", "cosmocr.at", tcpproxy.To("homebase-service.default.svc.cluster.local:80"))
+	p.AddSNIRoute(":443", "cosmocr.at", tcpproxy.To("homebase-service.default.svc.cluster.local:443"))
 	log.Fatal(p.Run())
 }
